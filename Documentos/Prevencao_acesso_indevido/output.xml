@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-14T17:06:25.780116" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\flavi\OneDrive\Documentos\catolica\Teste de Software\HealthAge\login.robot">
+<kw name="Dado que o usuário acessa a área de pacientes" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:26.311013" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/paciente'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:06:26.310657" elapsed="1.989205"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-14T17:06:28.300185" elapsed="0.033518"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:06:26.309924" elapsed="2.023931"/>
+</kw>
+<test id="s1-t1" name="01 - Deve permitir acesso ao próprio perfil" line="21">
+<kw name="Dado que o usuário informa o ID do paciente">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:28.336074" level="INFO">Typing text '100' into text field 'id=pacienteId'.</msg>
+<msg time="2026-06-14T17:06:28.411191" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:06:28.411377" level="FAIL">Element with locator 'id=pacienteId' not found.</msg>
+<arg>${CAMPO_ID}</arg>
+<arg>${id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:06:28.335608" elapsed="0.078625">Element with locator 'id=pacienteId' not found.</status>
+</kw>
+<arg>100</arg>
+<status status="FAIL" start="2026-06-14T17:06:28.335250" elapsed="0.079203">Element with locator 'id=pacienteId' not found.</status>
+</kw>
+<kw name="Quando solicitar a consulta do paciente">
+<status status="NOT RUN" start="2026-06-14T17:06:28.414821" elapsed="0.000081"/>
+</kw>
+<kw name="Então os dados do paciente devem ser exibidos">
+<status status="NOT RUN" start="2026-06-14T17:06:28.415270" elapsed="0.000063"/>
+</kw>
+<kw name="E o sistema não deve exibir a senha do usuário">
+<status status="NOT RUN" start="2026-06-14T17:06:28.415598" elapsed="0.000045"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:28.333956" elapsed="0.081949">Element with locator 'id=pacienteId' not found.</status>
+</test>
+<test id="s1-t2" name="02 - Deve bloquear tentativa de acesso a outro paciente" line="27">
+<kw name="Dado que o usuário informa o ID do paciente">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:28.417528" level="INFO">Typing text '101' into text field 'id=pacienteId'.</msg>
+<msg time="2026-06-14T17:06:28.487323" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:06:28.487511" level="FAIL">Element with locator 'id=pacienteId' not found.</msg>
+<arg>${CAMPO_ID}</arg>
+<arg>${id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:06:28.417223" elapsed="0.071657">Element with locator 'id=pacienteId' not found.</status>
+</kw>
+<arg>101</arg>
+<status status="FAIL" start="2026-06-14T17:06:28.416890" elapsed="0.072179">Element with locator 'id=pacienteId' not found.</status>
+</kw>
+<kw name="Quando solicitar a consulta do paciente">
+<status status="NOT RUN" start="2026-06-14T17:06:28.489717" elapsed="0.000051"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Acesso não autorizado ao recurso solicitado.</arg>
+<status status="NOT RUN" start="2026-06-14T17:06:28.490071" elapsed="0.000057"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:28.416427" elapsed="0.074026">Element with locator 'id=pacienteId' not found.</status>
+</test>
+<test id="s1-t3" name="03 - Deve impedir acesso sem autenticação" line="32">
+<kw name="Dado que o usuário acessa a consulta sem autenticação">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:28.492798" level="INFO">Opening url 'http://localhost:3000/paciente'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:06:28.492617" elapsed="0.159131"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:33.710225" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:06:33.710368" level="FAIL">Text 'Não autorizado. Faça login para continuar.' did not appear in 5 seconds.</msg>
+<arg>Não autorizado. Faça login para continuar.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-14T17:06:28.651938" elapsed="5.059796">Text 'Não autorizado. Faça login para continuar.' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:28.492202" elapsed="5.219712">Text 'Não autorizado. Faça login para continuar.' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Não autorizado. Faça login para continuar.</arg>
+<status status="NOT RUN" start="2026-06-14T17:06:33.712653" elapsed="0.000067"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:28.491675" elapsed="5.221307">Text 'Não autorizado. Faça login para continuar.' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t4" name="04 - Deve informar quando o paciente não existir" line="36">
+<kw name="Dado que o usuário informa o ID do paciente">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:33.714627" level="INFO">Typing text '9999' into text field 'id=pacienteId'.</msg>
+<msg time="2026-06-14T17:06:33.766296" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:06:33.766454" level="FAIL">Element with locator 'id=pacienteId' not found.</msg>
+<arg>${CAMPO_ID}</arg>
+<arg>${id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:06:33.714332" elapsed="0.053384">Element with locator 'id=pacienteId' not found.</status>
+</kw>
+<arg>9999</arg>
+<status status="FAIL" start="2026-06-14T17:06:33.714034" elapsed="0.053854">Element with locator 'id=pacienteId' not found.</status>
+</kw>
+<kw name="Quando solicitar a consulta do paciente">
+<status status="NOT RUN" start="2026-06-14T17:06:33.768208" elapsed="0.000050"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Paciente não encontrado.</arg>
+<status status="NOT RUN" start="2026-06-14T17:06:33.768529" elapsed="0.000054"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:33.713578" elapsed="0.055265">Element with locator 'id=pacienteId' not found.</status>
+</test>
+<test id="s1-t5" name="05 - Deve tratar erro interno do servidor" line="41">
+<kw name="Dado que ocorre uma falha interna no servidor">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:33.770275" level="INFO">Opening url 'http://localhost:3000/paciente'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:06:33.770112" elapsed="0.126299"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:06:39.148943" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:06:39.149118" level="FAIL">Text 'Erro interno do servidor' did not appear in 5 seconds.</msg>
+<arg>Erro interno do servidor</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-14T17:06:33.896619" elapsed="5.253816">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:33.769828" elapsed="5.380943">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Erro interno do servidor</arg>
+<status status="NOT RUN" start="2026-06-14T17:06:39.152889" elapsed="0.000057"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:33.769286" elapsed="5.384030">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-14T17:06:39.155075" elapsed="3.513820"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:06:39.154820" elapsed="3.514232"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:06:25.781993" elapsed="16.887111"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="5" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
