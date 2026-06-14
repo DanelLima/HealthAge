@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-14T17:02:11.489795" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\flavi\OneDrive\Documentos\catolica\Teste de Software\HealthAge\login.robot">
+<kw name="Dado que o usuário acessa a tela de consultas" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:12.034943" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/consultas'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:02:12.034590" elapsed="1.990265"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-14T17:02:14.025284" elapsed="0.026267"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:02:12.033825" elapsed="2.017870"/>
+</kw>
+<test id="s1-t1" name="01 - Deve disparar lembrete com 24 horas de antecedência" line="18">
+<kw name="Dado que o usuário informa o ID da consulta">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:14.055302" level="INFO">Typing text '10' into text field 'id=consultaId'.</msg>
+<msg time="2026-06-14T17:02:14.137859" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:02:14.138046" level="FAIL">Element with locator 'id=consultaId' not found.</msg>
+<arg>${CAMPO_CONSULTA_ID}</arg>
+<arg>${consultaId}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:02:14.054280" elapsed="0.086631">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<arg>10</arg>
+<status status="FAIL" start="2026-06-14T17:02:14.052652" elapsed="0.088503">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<kw name="Quando solicitar a verificação do lembrete">
+<status status="NOT RUN" start="2026-06-14T17:02:14.141734" elapsed="0.000082"/>
+</kw>
+<kw name="Então o sistema deve apresentar o status">
+<arg>notificacao_enviada</arg>
+<status status="NOT RUN" start="2026-06-14T17:02:14.142987" elapsed="0.000061"/>
+</kw>
+<kw name="E o sistema deve apresentar a mensagem">
+<arg>Lembrete: consulta em 24 horas</arg>
+<status status="NOT RUN" start="2026-06-14T17:02:14.143389" elapsed="0.000051"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:14.051905" elapsed="0.091937">Element with locator 'id=consultaId' not found.</status>
+</test>
+<test id="s1-t2" name="02 - Não deve disparar lembrete fora da janela T-24h" line="24">
+<kw name="Dado que o usuário informa o ID da consulta">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:14.145729" level="INFO">Typing text '11' into text field 'id=consultaId'.</msg>
+<msg time="2026-06-14T17:02:14.231240" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:02:14.231403" level="FAIL">Element with locator 'id=consultaId' not found.</msg>
+<arg>${CAMPO_CONSULTA_ID}</arg>
+<arg>${consultaId}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:02:14.145409" elapsed="0.087438">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<arg>11</arg>
+<status status="FAIL" start="2026-06-14T17:02:14.145075" elapsed="0.087955">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<kw name="Quando solicitar a verificação do lembrete">
+<status status="NOT RUN" start="2026-06-14T17:02:14.233459" elapsed="0.000058"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Nenhuma notificação enviada</arg>
+<status status="NOT RUN" start="2026-06-14T17:02:14.234782" elapsed="0.000104"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:14.144473" elapsed="0.091034">Element with locator 'id=consultaId' not found.</status>
+</test>
+<test id="s1-t3" name="03 - Deve informar quando a consulta não existir" line="29">
+<kw name="Dado que o usuário informa o ID da consulta">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:14.238477" level="INFO">Typing text '9999' into text field 'id=consultaId'.</msg>
+<msg time="2026-06-14T17:02:14.299367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:02:14.299555" level="FAIL">Element with locator 'id=consultaId' not found.</msg>
+<arg>${CAMPO_CONSULTA_ID}</arg>
+<arg>${consultaId}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:02:14.238137" elapsed="0.062693">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<arg>9999</arg>
+<status status="FAIL" start="2026-06-14T17:02:14.237721" elapsed="0.063278">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<kw name="Quando solicitar a verificação do lembrete">
+<status status="NOT RUN" start="2026-06-14T17:02:14.301316" elapsed="0.000051"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Consulta não encontrada.</arg>
+<status status="NOT RUN" start="2026-06-14T17:02:14.301658" elapsed="0.000055"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:14.237118" elapsed="0.064899">Element with locator 'id=consultaId' not found.</status>
+</test>
+<test id="s1-t4" name="04 - Deve bloquear acesso a consulta de outro usuário" line="34">
+<kw name="Dado que o usuário informa o ID da consulta">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:14.304384" level="INFO">Typing text '20' into text field 'id=consultaId'.</msg>
+<msg time="2026-06-14T17:02:14.353707" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:02:14.353883" level="FAIL">Element with locator 'id=consultaId' not found.</msg>
+<arg>${CAMPO_CONSULTA_ID}</arg>
+<arg>${consultaId}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:02:14.304001" elapsed="0.051386">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<arg>20</arg>
+<status status="FAIL" start="2026-06-14T17:02:14.303665" elapsed="0.051910">Element with locator 'id=consultaId' not found.</status>
+</kw>
+<kw name="Quando solicitar a verificação do lembrete">
+<status status="NOT RUN" start="2026-06-14T17:02:14.356224" elapsed="0.000057"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Acesso não autorizado.</arg>
+<status status="NOT RUN" start="2026-06-14T17:02:14.356508" elapsed="0.000037"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:14.302968" elapsed="0.053789">Element with locator 'id=consultaId' not found.</status>
+</test>
+<test id="s1-t5" name="05 - Deve tratar erro interno do servidor" line="39">
+<kw name="Dado que ocorre uma falha interna no servidor">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:14.358094" level="INFO">Opening url 'http://localhost:3000/consultas'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:02:14.357936" elapsed="0.152576"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:02:19.664557" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:02:19.664717" level="FAIL">Text 'Erro interno do servidor' did not appear in 5 seconds.</msg>
+<arg>Erro interno do servidor</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-14T17:02:14.510695" elapsed="5.155455">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:14.357661" elapsed="5.308665">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Erro interno do servidor</arg>
+<status status="NOT RUN" start="2026-06-14T17:02:19.667314" elapsed="0.000058"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:14.357221" elapsed="5.311608">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-14T17:02:19.670090" elapsed="2.555822"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:02:19.669854" elapsed="2.556184"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:11.491650" elapsed="10.734437"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="5" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

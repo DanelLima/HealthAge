@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-14T17:04:26.193405" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\flavi\OneDrive\Documentos\catolica\Teste de Software\HealthAge\login.robot">
+<kw name="Dado que o usuário acessa a tela do dashboard" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:26.764495" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/dashboard'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:04:26.764139" elapsed="1.352255"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-14T17:04:28.117021" elapsed="0.896528"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:04:26.763382" elapsed="2.250310"/>
+</kw>
+<test id="s1-t1" name="01 - Deve carregar dashboard dentro do tempo esperado" line="20">
+<kw name="Dado que o usuário seleciona o período">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:29.015235" level="INFO">Selecting options from selection list 'id=periodo' by label hoje.</msg>
+<msg time="2026-06-14T17:04:29.101463" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:04:29.101636" level="FAIL">List with locator 'id=periodo' not found.</msg>
+<arg>${SELECT_PERIODO}</arg>
+<arg>${periodo}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="FAIL" start="2026-06-14T17:04:29.014758" elapsed="0.090881">List with locator 'id=periodo' not found.</status>
+</kw>
+<arg>hoje</arg>
+<status status="FAIL" start="2026-06-14T17:04:29.014391" elapsed="0.091503">List with locator 'id=periodo' not found.</status>
+</kw>
+<kw name="Quando solicitar a carga do dashboard">
+<status status="NOT RUN" start="2026-06-14T17:04:29.106256" elapsed="0.000048"/>
+</kw>
+<kw name="Então o dashboard deve ser carregado em menos de 3 segundos">
+<status status="NOT RUN" start="2026-06-14T17:04:29.106573" elapsed="0.000044"/>
+</kw>
+<kw name="E os dados do usuário devem ser exibidos">
+<status status="NOT RUN" start="2026-06-14T17:04:29.106844" elapsed="0.000061"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:29.013785" elapsed="0.093492">List with locator 'id=periodo' not found.</status>
+</test>
+<test id="s1-t2" name="02 - Deve apresentar timeout para volume elevado de dados" line="26">
+<kw name="Dado que o usuário seleciona o período">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:29.109961" level="INFO">Selecting options from selection list 'id=periodo' by label ano.</msg>
+<msg time="2026-06-14T17:04:29.186029" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:04:29.186175" level="FAIL">List with locator 'id=periodo' not found.</msg>
+<arg>${SELECT_PERIODO}</arg>
+<arg>${periodo}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="FAIL" start="2026-06-14T17:04:29.109628" elapsed="0.077909">List with locator 'id=periodo' not found.</status>
+</kw>
+<arg>ano</arg>
+<status status="FAIL" start="2026-06-14T17:04:29.109256" elapsed="0.078467">List with locator 'id=periodo' not found.</status>
+</kw>
+<kw name="Quando solicitar a carga do dashboard">
+<status status="NOT RUN" start="2026-06-14T17:04:29.193545" elapsed="0.000071"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Tempo limite de resposta excedido.</arg>
+<status status="NOT RUN" start="2026-06-14T17:04:29.195022" elapsed="0.000064"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:29.108659" elapsed="0.086745">List with locator 'id=periodo' not found.</status>
+</test>
+<test id="s1-t3" name="03 - Deve impedir acesso sem autenticação" line="31">
+<kw name="Dado que o usuário acessa o dashboard sem autenticação">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:29.197547" level="INFO">Opening url 'http://localhost:3000/dashboard'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:04:29.197393" elapsed="0.153736"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:34.406376" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:04:34.406518" level="FAIL">Text 'Não autorizado.' did not appear in 5 seconds.</msg>
+<arg>Não autorizado.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-14T17:04:29.351308" elapsed="5.056579">Text 'Não autorizado.' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:29.197116" elapsed="5.210963">Text 'Não autorizado.' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Não autorizado.</arg>
+<status status="NOT RUN" start="2026-06-14T17:04:34.408661" elapsed="0.000056"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:29.196662" elapsed="5.212329">Text 'Não autorizado.' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t4" name="04 - Deve apresentar erro interno do servidor" line="35">
+<kw name="Dado que ocorre uma falha interna no servidor">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:34.410418" level="INFO">Opening url 'http://localhost:3000/dashboard'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:04:34.410227" elapsed="0.127583"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:04:39.785737" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:04:39.785880" level="FAIL">Text 'Erro interno do servidor' did not appear in 5 seconds.</msg>
+<arg>Erro interno do servidor</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-14T17:04:34.537994" elapsed="5.248888">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:34.409873" elapsed="5.377191">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Erro interno do servidor</arg>
+<status status="NOT RUN" start="2026-06-14T17:04:39.787942" elapsed="0.000062"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:34.409437" elapsed="5.379235">Text 'Erro interno do servidor' did not appear in 5 seconds.</status>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-14T17:04:39.790050" elapsed="2.873780"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:04:39.789810" elapsed="2.874161"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:04:26.195142" elapsed="16.468880"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="4" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

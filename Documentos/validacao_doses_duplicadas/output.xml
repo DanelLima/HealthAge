@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-14T16:56:43.204042" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\flavi\OneDrive\Documentos\catolica\Teste de Software\HealthAge\login.robot">
+<kw name="Dado que o usuário acessa a tela de prescrição" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:56:43.775768" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/prescricao'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-14T16:56:43.775425" elapsed="1.213624"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-14T16:56:44.989422" elapsed="0.870484"/>
+</kw>
+<status status="PASS" start="2026-06-14T16:56:43.774771" elapsed="2.085294"/>
+</kw>
+<test id="s1-t1" name="01 - Deve criar prescrição sem horários duplicados" line="25">
+<kw name="Dado que o usuário informa o medicamento">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:56:45.862583" level="INFO">Typing text 'Paracetamol 500mg' into text field 'id=medicamento'.</msg>
+<msg time="2026-06-14T16:56:45.924895" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:56:45.925174" level="FAIL">Element with locator 'id=medicamento' not found.</msg>
+<arg>${INPUT_MEDICAMENTO}</arg>
+<arg>${medicamento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:56:45.862052" elapsed="0.066563">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<arg>Paracetamol 500mg</arg>
+<status status="FAIL" start="2026-06-14T16:56:45.861517" elapsed="0.067294">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<kw name="E informa a frequência em horas">
+<arg>8</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.929131" elapsed="0.000048"/>
+</kw>
+<kw name="E informa a data inicial">
+<arg>2026-05-01</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.929422" elapsed="0.000042"/>
+</kw>
+<kw name="E informa a hora inicial">
+<arg>08:00</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.929676" elapsed="0.000036"/>
+</kw>
+<kw name="Quando solicitar a criação da prescrição">
+<status status="NOT RUN" start="2026-06-14T16:56:45.929900" elapsed="0.000036"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Prescrição criada com sucesso</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.930122" elapsed="0.000035"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:56:45.860175" elapsed="0.070218">Element with locator 'id=medicamento' not found.</status>
+</test>
+<test id="s1-t2" name="02 - Deve bloquear horários duplicados" line="35">
+<kw name="Dado que o usuário informa o medicamento">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:56:45.932923" level="INFO">Typing text 'Paracetamol 500mg' into text field 'id=medicamento'.</msg>
+<msg time="2026-06-14T16:56:45.994770" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:56:45.994919" level="FAIL">Element with locator 'id=medicamento' not found.</msg>
+<arg>${INPUT_MEDICAMENTO}</arg>
+<arg>${medicamento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:56:45.932623" elapsed="0.063687">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<arg>Paracetamol 500mg</arg>
+<status status="FAIL" start="2026-06-14T16:56:45.932205" elapsed="0.064366">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<kw name="E informa a frequência em horas">
+<arg>0</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.997066" elapsed="0.000232"/>
+</kw>
+<kw name="E informa a data inicial">
+<arg>2026-05-01</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.998741" elapsed="0.000064"/>
+</kw>
+<kw name="E informa a hora inicial">
+<arg>08:00</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.999051" elapsed="0.000036"/>
+</kw>
+<kw name="Quando solicitar a criação da prescrição">
+<status status="NOT RUN" start="2026-06-14T16:56:45.999336" elapsed="0.000039"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Horários duplicados detectados na agenda de medicação.</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:45.999583" elapsed="0.000039"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:56:45.931694" elapsed="0.068156">Element with locator 'id=medicamento' not found.</status>
+</test>
+<test id="s1-t3" name="03 - Deve validar frequência inválida" line="45">
+<kw name="Dado que o usuário informa o medicamento">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:56:46.001144" level="INFO">Typing text 'Paracetamol 500mg' into text field 'id=medicamento'.</msg>
+<msg time="2026-06-14T16:56:46.065340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:56:46.065487" level="FAIL">Element with locator 'id=medicamento' not found.</msg>
+<arg>${INPUT_MEDICAMENTO}</arg>
+<arg>${medicamento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:56:46.000895" elapsed="0.065907">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<arg>Paracetamol 500mg</arg>
+<status status="FAIL" start="2026-06-14T16:56:46.000614" elapsed="0.066353">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<kw name="E informa a frequência em horas">
+<arg>-1</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.067268" elapsed="0.000047"/>
+</kw>
+<kw name="E informa a data inicial">
+<arg>2026-05-01</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.067523" elapsed="0.000034"/>
+</kw>
+<kw name="E informa a hora inicial">
+<arg>08:00</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.067720" elapsed="0.000030"/>
+</kw>
+<kw name="Quando solicitar a criação da prescrição">
+<status status="NOT RUN" start="2026-06-14T16:56:46.067942" elapsed="0.000036"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Frequência de dose inválida.</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.068156" elapsed="0.000034"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:56:46.000245" elapsed="0.068135">Element with locator 'id=medicamento' not found.</status>
+</test>
+<test id="s1-t4" name="04 - Deve validar medicamento obrigatório" line="55">
+<kw name="Dado que o usuário informa o medicamento">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:56:46.070530" level="INFO">Typing text '' into text field 'id=medicamento'.</msg>
+<msg time="2026-06-14T16:56:46.131504" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:56:46.131663" level="FAIL">Element with locator 'id=medicamento' not found.</msg>
+<arg>${INPUT_MEDICAMENTO}</arg>
+<arg>${medicamento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:56:46.069930" elapsed="0.063117">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T16:56:46.069104" elapsed="0.064106">Element with locator 'id=medicamento' not found.</status>
+</kw>
+<kw name="E informa a frequência em horas">
+<arg>8</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.137303" elapsed="0.000057"/>
+</kw>
+<kw name="E informa a data inicial">
+<arg>2026-05-01</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.137847" elapsed="0.000043"/>
+</kw>
+<kw name="E informa a hora inicial">
+<arg>08:00</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.138335" elapsed="0.000047"/>
+</kw>
+<kw name="Quando solicitar a criação da prescrição">
+<status status="NOT RUN" start="2026-06-14T16:56:46.138697" elapsed="0.000084"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Medicamento obrigatório</arg>
+<status status="NOT RUN" start="2026-06-14T16:56:46.139341" elapsed="0.000051"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:56:46.068748" elapsed="0.070983">Element with locator 'id=medicamento' not found.</status>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-14T16:56:46.140841" elapsed="2.396976"/>
+</kw>
+<status status="PASS" start="2026-06-14T16:56:46.140624" elapsed="2.397396"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:56:43.205775" elapsed="5.332301"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="4" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
