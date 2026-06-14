@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.3 on win32)" generated="2026-06-14T17:02:59.992798" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\Daniel\Documents\HealthAge\login.robot">
+<kw name="Dado que o usuário acessa a tela de cadastro" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:03:00.915777" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/cadastro'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-14T17:03:00.910949" elapsed="5.858576"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-14T17:03:06.769826" elapsed="1.080483"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:03:00.908269" elapsed="6.942182"/>
+</kw>
+<test id="s1-t1" name="01 - Deve realizar cadastro com sucesso" line="21">
+<kw name="Dado que o usuário informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:03:07.851859" level="INFO">Typing text 'João Silva' into text field 'id=nome'.</msg>
+<msg time="2026-06-14T17:03:07.977499" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:03:07.977697" level="FAIL">Element with locator 'id=nome' not found.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:03:07.851414" elapsed="0.130538">Element with locator 'id=nome' not found.</status>
+</kw>
+<arg>João Silva</arg>
+<status status="FAIL" start="2026-06-14T17:03:07.851110" elapsed="0.131025">Element with locator 'id=nome' not found.</status>
+</kw>
+<kw name="E informa o email">
+<arg>usuario@email.com</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:07.982439" elapsed="0.000041"/>
+</kw>
+<kw name="E informa a senha">
+<arg>12345678</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:07.982771" elapsed="0.000075"/>
+</kw>
+<kw name="E informa o telefone">
+<arg>69999999999</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:07.983080" elapsed="0.000034"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<status status="NOT RUN" start="2026-06-14T17:03:07.983309" elapsed="0.000034"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Usuário cadastrado com sucesso</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:07.983523" elapsed="0.000031"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:03:07.850549" elapsed="0.133217">Element with locator 'id=nome' not found.</status>
+</test>
+<test id="s1-t2" name="02 - Deve validar email já cadastrado" line="29">
+<kw name="Dado que o usuário informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:03:07.984983" level="INFO">Typing text 'João Silva' into text field 'id=nome'.</msg>
+<msg time="2026-06-14T17:03:08.044276" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:03:08.044436" level="FAIL">Element with locator 'id=nome' not found.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:03:07.984735" elapsed="0.061054">Element with locator 'id=nome' not found.</status>
+</kw>
+<arg>João Silva</arg>
+<status status="FAIL" start="2026-06-14T17:03:07.984505" elapsed="0.061445">Element with locator 'id=nome' not found.</status>
+</kw>
+<kw name="E informa o email">
+<arg>usuario@email.com</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.046326" elapsed="0.000045"/>
+</kw>
+<kw name="E informa a senha">
+<arg>12345678</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.046668" elapsed="0.000043"/>
+</kw>
+<kw name="E informa o telefone">
+<arg>69999999999</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.047118" elapsed="0.000044"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<status status="NOT RUN" start="2026-06-14T17:03:08.047469" elapsed="0.000040"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Email já cadastrado.</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.047733" elapsed="0.000033"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:03:07.984158" elapsed="0.063859">Element with locator 'id=nome' not found.</status>
+</test>
+<test id="s1-t3" name="03 - Deve exibir erro interno do servidor" line="37">
+<kw name="Dado que o usuário informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T17:03:08.049239" level="INFO">Typing text 'João Silva' into text field 'id=nome'.</msg>
+<msg time="2026-06-14T17:03:08.114990" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T17:03:08.115174" level="FAIL">Element with locator 'id=nome' not found.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T17:03:08.048999" elapsed="0.067545">Element with locator 'id=nome' not found.</status>
+</kw>
+<arg>João Silva</arg>
+<status status="FAIL" start="2026-06-14T17:03:08.048755" elapsed="0.067947">Element with locator 'id=nome' not found.</status>
+</kw>
+<kw name="E informa o email">
+<arg>usuario@email.com</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.117032" elapsed="0.000043"/>
+</kw>
+<kw name="E informa a senha">
+<arg>12345678</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.117361" elapsed="0.000035"/>
+</kw>
+<kw name="E informa o telefone">
+<arg>69999999999</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.117616" elapsed="0.000031"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<status status="NOT RUN" start="2026-06-14T17:03:08.117858" elapsed="0.000034"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Erro ao cadastrar</arg>
+<status status="NOT RUN" start="2026-06-14T17:03:08.118083" elapsed="0.000030"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:03:08.048375" elapsed="0.069936">Element with locator 'id=nome' not found.</status>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-14T17:03:08.119051" elapsed="2.232297"/>
+</kw>
+<status status="PASS" start="2026-06-14T17:03:08.118885" elapsed="2.232575"/>
+</kw>
+<status status="FAIL" start="2026-06-14T17:02:59.994358" elapsed="10.357148"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="3" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
