@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-14T16:48:08.473463" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\flavi\OneDrive\Documentos\catolica\Teste de Software\HealthAge\login.robot">
+<kw name="Dado que o usuário acessa a tela de login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:09.082998" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-14T16:48:09.082503" elapsed="2.022423"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-14T16:48:11.105164" elapsed="0.043667"/>
+</kw>
+<status status="PASS" start="2026-06-14T16:48:09.081296" elapsed="2.067672"/>
+</kw>
+<test id="s1-t1" name="Deve realizar login com credenciais válidas" line="22">
+<kw name="Dado que o usuário informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:11.150522" level="INFO">Typing text 'danielsouzalimabsb@gmail.com' into text field 'xpath=//*[@id="root"]/div/form/div[1]/input'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-14T16:48:11.150046" elapsed="0.214682"/>
+</kw>
+<arg>danielsouzalimabsb@gmail.com</arg>
+<status status="PASS" start="2026-06-14T16:48:11.149674" elapsed="0.215195"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:11.365792" level="INFO">Typing password into text field 'xpath=//*[@id="root"]/div/form/div[2]/input'.</msg>
+<msg time="2026-06-14T16:48:11.400469" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-14T16:48:11.365521" elapsed="0.100385"/>
+</kw>
+<arg>masterkey</arg>
+<status status="PASS" start="2026-06-14T16:48:11.365177" elapsed="0.100855"/>
+</kw>
+<kw name="Quando solicitar o login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:11.467000" level="INFO">Clicking button 'xpath=//*[@id="root"]/div/form/button'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-14T16:48:11.466718" elapsed="0.104755"/>
+</kw>
+<status status="PASS" start="2026-06-14T16:48:11.466393" elapsed="0.105227"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:11.573865" level="INFO">Verifying element 'Login realizado com sucesso' contains exact text 'Login realizado com sucesso'.</msg>
+<msg time="2026-06-14T16:48:11.900062" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:48:11.900233" level="FAIL">Element with locator 'Login realizado com sucesso' not found.</msg>
+<arg>${MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2026-06-14T16:48:11.573252" elapsed="0.329937">Element with locator 'Login realizado com sucesso' not found.</status>
+</kw>
+<arg>Login realizado com sucesso</arg>
+<status status="FAIL" start="2026-06-14T16:48:11.572664" elapsed="0.330727">Element with locator 'Login realizado com sucesso' not found.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:11.149063" elapsed="0.755007">Element with locator 'Login realizado com sucesso' not found.</status>
+</test>
+<test id="s1-t2" name="Deve validar usuário não encontrado" line="30">
+<kw name="Dado que o usuário informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:11.905917" level="INFO">Typing text 'flaviodaniel@gmail.com' into text field 'xpath=//*[@id="root"]/div/form/div[1]/input'.</msg>
+<msg time="2026-06-14T16:48:11.997322" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:48:11.997465" level="FAIL">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:48:11.905608" elapsed="0.093351">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<arg>flaviodaniel@gmail.com</arg>
+<status status="FAIL" start="2026-06-14T16:48:11.905258" elapsed="0.093880">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<kw name="E informa a senha">
+<arg>1234</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:11.999450" elapsed="0.000049"/>
+</kw>
+<kw name="Quando solicitar o login">
+<status status="NOT RUN" start="2026-06-14T16:48:11.999881" elapsed="0.000046"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Usuário não encontrado.</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:12.000167" elapsed="0.000051"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:11.904788" elapsed="0.095672">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</test>
+<test id="s1-t3" name="Deve validar senha incorreta" line="38">
+<kw name="Dado que o usuário informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:12.002008" level="INFO">Typing text 'danielsouzalimabsb@gmail.com' into text field 'xpath=//*[@id="root"]/div/form/div[1]/input'.</msg>
+<msg time="2026-06-14T16:48:12.086981" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:48:12.087138" level="FAIL">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:48:12.001696" elapsed="0.086901">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<arg>danielsouzalimabsb@gmail.com</arg>
+<status status="FAIL" start="2026-06-14T16:48:12.001339" elapsed="0.087450">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<kw name="E informa a senha">
+<arg>masterkey12</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:12.089551" elapsed="0.000049"/>
+</kw>
+<kw name="Quando solicitar o login">
+<status status="NOT RUN" start="2026-06-14T16:48:12.089864" elapsed="0.000039"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Credenciais inválidas</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:12.090655" elapsed="0.000049"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:12.000910" elapsed="0.091550">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</test>
+<test id="s1-t4" name="Deve validar email obrigatório" line="46">
+<kw name="Dado que o usuário informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:12.098173" level="INFO">Typing text '' into text field 'xpath=//*[@id="root"]/div/form/div[1]/input'.</msg>
+<msg time="2026-06-14T16:48:12.203582" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:48:12.203761" level="FAIL">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:48:12.097672" elapsed="0.107546">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:12.096907" elapsed="0.108491">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<kw name="E informa a senha">
+<arg>masterkey</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:12.206830" elapsed="0.000063"/>
+</kw>
+<kw name="Quando solicitar o login">
+<status status="NOT RUN" start="2026-06-14T16:48:12.207210" elapsed="0.000046"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Email obrigatório</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:12.207504" elapsed="0.000040"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:12.096091" elapsed="0.111721">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</test>
+<test id="s1-t5" name="Deve validar senha obrigatória" line="54">
+<kw name="Dado que o usuário informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-14T16:48:12.209274" level="INFO">Typing text 'danielsouzalimabsb@gmail.com' into text field 'xpath=//*[@id="root"]/div/form/div[1]/input'.</msg>
+<msg time="2026-06-14T16:48:12.285539" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-14T16:48:12.285682" level="FAIL">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-14T16:48:12.208968" elapsed="0.078171">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<arg>danielsouzalimabsb@gmail.com</arg>
+<status status="FAIL" start="2026-06-14T16:48:12.208638" elapsed="0.078704">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</kw>
+<kw name="E informa a senha">
+<status status="NOT RUN" start="2026-06-14T16:48:12.292059" elapsed="0.000058"/>
+</kw>
+<kw name="Quando solicitar o login">
+<status status="NOT RUN" start="2026-06-14T16:48:12.292355" elapsed="0.000041"/>
+</kw>
+<kw name="Então o sistema deve apresentar a mensagem">
+<arg>Senha obrigatória</arg>
+<status status="NOT RUN" start="2026-06-14T16:48:12.293340" elapsed="0.000070"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:12.208226" elapsed="0.085609">Element with locator 'xpath=//*[@id="root"]/div/form/div[1]/input' not found.</status>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-14T16:48:12.298012" elapsed="2.393522"/>
+</kw>
+<status status="PASS" start="2026-06-14T16:48:12.297753" elapsed="2.393910"/>
+</kw>
+<status status="FAIL" start="2026-06-14T16:48:08.475699" elapsed="6.216019"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="0" fail="5" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
